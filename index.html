@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ni no Kuni: Wrath of the White Witch</title>
+  <title>Ni no Kuni: Wrath of the White Witch — Sound + Image + Affect</title>
+
   <style>
     :root{
       --bg: #f7f3ec;
@@ -41,7 +42,7 @@
 
     header h1{
       margin: 0 0 8px;
-      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
       letter-spacing: .5px;
       text-shadow: 0 2px 0 rgba(0,0,0,.15);
     }
@@ -75,6 +76,12 @@
       font-size: 1.35rem;
     }
 
+    h3{
+      margin: 16px 0 8px;
+      color: var(--brown-dark);
+      font-size: 1.05rem;
+    }
+
     .hero{
       padding-top: 18px;
     }
@@ -86,7 +93,19 @@
       box-shadow: 0 12px 26px rgba(0,0,0,.18);
     }
 
-    .caption{
+    figure{
+      margin: 14px 0 0;
+    }
+
+    figure img{
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 18px rgba(0,0,0,.12);
+    }
+
+    figcaption{
       margin: 10px 2px 0;
       font-size: .95rem;
       opacity: .86;
@@ -145,20 +164,51 @@
       opacity: .82;
     }
 
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 10px;
+    .note{
+      background: #fbf5ea;
+      border-left: 5px solid var(--brown2);
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 12px;
     }
 
-    .chip{
+    .toc{
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .toc a{
+      text-decoration: none;
+      color: #3c2d1c;
       background: #f4ecdf;
       border: 1px solid rgba(0,0,0,.06);
       padding: 7px 10px;
       border-radius: 999px;
       font-size: .92rem;
-      color: #3c2d1c;
+    }
+
+    .toc a:hover{
+      background: #efe2cf;
+    }
+
+    .spoiler{
+      background: #fff2e0;
+      border: 1px solid rgba(0,0,0,.07);
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    .small{
+      font-size: .95rem;
+      opacity: .9;
+    }
+
+    .notes{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      font-size: .95rem;
     }
 
     footer{
@@ -167,28 +217,42 @@
       font-size: .92rem;
       opacity: .8;
     }
-
-    .note{
-      background: #fbf5ea;
-      border-left: 5px solid var(--brown2);
-      padding: 12px 14px;
-      border-radius: 12px;
-    }
   </style>
 </head>
 
 <body>
   <header>
     <h1>Ni no Kuni: Wrath of the White Witch</h1>
-    <p>Art, Technology, and Interactivity in a Fantasy Game World</p>
+    <p>Sound + Image + Interactivity as a “Web Paper” (Final Project)</p>
   </header>
 
   <main class="wrap">
-    <!-- Title → Game Image → Video -->
-    <section class="card hero">
-      <img src="images:game_art.png" alt="Ni no Kuni: Wrath of the White Witch artwork" />
+
+    <!-- HERO / KEY ART -->
+    <section class="card hero" id="top">
+      <!-- FIXED PATH: use images: not images/ -->
+      <img src="images:game_art.png" alt="Ni no Kuni: Wrath of the White Witch key art" />
+      <p class="small" style="margin:12px 0 0;">
+        <strong>Author:</strong> [YOUR NAME] • <strong>Course:</strong> [COURSE NAME] • <strong>Date:</strong> January 7, 2026
+      </p>
+
+      <div class="toc" aria-label="Table of contents">
+        <a href="#about">About</a>
+        <a href="#gameplay">Gameplay + Stakes</a>
+        <a href="#arc">Narrative Arc</a>
+        <a href="#analysis">Main Analysis (Sound + Image)</a>
+        <a href="#ending">How it Ends</a>
+        <a href="#conclusion">Conclusion</a>
+        <a href="#biblio">Bibliographic Notes</a>
+      </div>
+
+      <div class="note">
+        <strong>Focus of this web paper:</strong> one aspect of the game — how <strong>sound + image</strong> create an emotional “container”
+        that makes the story’s heavy themes (loss, fear, responsibility) feel playable and meaningful (note 1; note 2).
+      </div>
     </section>
 
+    <!-- TRAILER -->
     <section class="card">
       <h2>Trailer</h2>
       <iframe class="video"
@@ -197,59 +261,38 @@
         allowfullscreen></iframe>
     </section>
 
-    <!-- Everything else underneath -->
-    <section class="card">
+    <!-- ABOUT -->
+    <section class="card" id="about">
       <h2>About the Game</h2>
-      <p><em>Ni no Kuni: Wrath of the White Witch</em> is a role‑playing game made by Level‑5 with animation support from Studio Ghibli. You play as Oliver, a kid who enters a parallel world after a major loss in his own life. The game mixes exploration, quests, creature companions (“familiars”), and real-time combat, and it uses a warm, illustrated style to carry heavier emotions.</p>
-      
+      <p>
+        <em>Ni no Kuni: Wrath of the White Witch</em> is a role-playing game by Level-5 with animation collaboration tied to Studio Ghibli’s style (note 3).
+        You play as Oliver, a kid who crosses into a parallel world after a major loss in his own life. The game blends exploration, side quests,
+        creature companions (“familiars”), and real-time combat. What stands out to me is that the warm, illustrated look doesn’t erase sadness —
+        it makes space for it, so the player can keep moving forward.
+      </p>
+
+      <!-- OPTIONAL screenshot slot -->
+      <figure>
+        <img src="images/screenshot_world.png" alt="Screenshot of the overworld or a town in Ni no Kuni" />
+        <figcaption>
+          Screenshot: A town/overworld moment where the storybook look makes the world feel safe even when the story is serious.
+          (Replace this file with your own screenshot and update the image note in Bibliographic Notes.)
+        </figcaption>
+      </figure>
     </section>
 
-    <section class="card">
-      <h2>Main Characters</h2>
-      <div class="grid">
-        <div class="char">
-          <img src="images:oliver.png" alt="Oliver" />
-          <p class="name">Oliver</p>
-          <p class="mini">The player character—curious, brave, and emotionally grounded.</p>
-        </div>
-        <div class="char">
-          <img src="images:drippy.png" alt="Drippy" />
-          <p class="name">Drippy</p>
-          <p class="mini">A guide/sidekick who keeps the world feeling playful and magical.</p>
-        </div>
-        <div class="char">
-          <img src="images:esther.png" alt="Esther" />
-          <p class="name">Esther</p>
-          <p class="mini">A companion whose design and role reinforce the fairytale adventure tone.</p>
-        </div>
-        <div class="char">
-          <img src="images:swaine.png" alt="Swaine" />
-          <p class="name">Swaine</p>
-          <p class="mini">A more “street-smart” ally who adds contrast to the storybook innocence.</p>
-        </div>
-      </div>
-    </section>
+    <!-- GAMEPLAY + STAKES -->
+    <section class="card" id="gameplay">
+      <h2>Gameplay and What’s at Stake</h2>
 
-    <section class="card">
-      <h2>Artistic Dimension</h2>
-      <p>The game’s visual language uses soft color palettes, rounded shapes, and hand-drawn character design to signal wonder and safety. Semiotics-wise, those signs tell you “this is a gentle fantasy,” even when the narrative explores loss and fear. That contrast is part of the emotional power: the art makes difficult themes feel approachable without making them disappear.</p>
-    </section>
+      <h3>What you do (gameplay loop)</h3>
+      <p>
+        The core loop is: explore → talk to people and accept quests → fight enemies → level up → unlock new areas and abilities.
+        Battles happen in real time, but they still have RPG decision-making (switching actions, timing, using items, managing health/magic).
+        Familiars make combat feel like teamwork: you’re not only controlling Oliver — you’re building a small ecosystem of helpers.
+      </p>
 
-    <section class="card">
-      <h2>Technical Dimension</h2>
-      <p>Technically, <em>Ni no Kuni</em> blends animated cutscenes with 3D environments and live combat. The smooth transition between “watching” and “playing” makes the world feel continuous, so you stay immersed in the same mood and style. The systems (menus, combat UI, companions) also create a consistent “storybook interface,” like you’re navigating a magical illustrated book.</p>
-    </section>
-
-    <section class="card">
-      <h2>Interactive Dimension</h2>
-      <p>The game’s meaning is produced through participation: exploration, battles, and repeated learning. You don’t just observe Oliver’s journey—you practice it. Interactivity turns emotions into actions (risk, recovery, patience), and repetition (trying again, learning a boss, building a team) becomes part of how the player understands the world.</p>
-    </section>
-
-    
-
-    <footer>
-      <p>Ni no Kuni analysis website — class project (art + tech + interactivity)</p>
-    </footer>
-  </main>
-</body>
-</html>
+      <h3>What’s at stake (why it matters)</h3>
+      <p>
+        The stakes start personal: Oliver is grieving his mother and wants to “fix” what feels impossible to fix.
+        But the game scales that grief into something world-wide: there’s a force that damages
