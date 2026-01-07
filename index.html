@@ -7,37 +7,41 @@
   <style>
     :root{
       --bg: #f7f3ec;
+      --bg2:#efe6d6;
       --paper: #ffffff;
       --ink: #2a221a;
       --brown: #6b4f2d;
+      --brown2:#8a6a43;
       --brown-dark: #4a3621;
       --line: #e6dccb;
-      --shadow: 0 8px 18px rgba(0,0,0,.10);
+      --shadow: 0 10px 22px rgba(0,0,0,.10);
       --radius: 16px;
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing: border-box; }
 
     body{
       margin: 0;
       font-family: "Trebuchet MS", Arial, sans-serif;
       line-height: 1.7;
       color: var(--ink);
-      background: radial-gradient(circle at top, #fbf8f2 0%, var(--bg) 55%, #efe7db 100%);
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(138,106,67,.20), transparent 60%),
+        radial-gradient(800px 450px at 90% 10%, rgba(107,79,45,.16), transparent 55%),
+        linear-gradient(180deg, #fbf8f2 0%, var(--bg) 40%, var(--bg2) 100%);
     }
 
     header{
-      position: relative;
       background: linear-gradient(180deg, #7a5a35 0%, var(--brown) 70%, #5b4024 100%);
       color: #fffaf0;
-      padding: 34px 16px 56px;
-      overflow: hidden;
       text-align: center;
+      padding: 34px 16px 28px;
+      border-bottom: 4px solid rgba(255,255,255,.14);
     }
 
     header h1{
       margin: 0 0 8px;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
       letter-spacing: .5px;
       text-shadow: 0 2px 0 rgba(0,0,0,.15);
     }
@@ -46,19 +50,6 @@
       margin: 0;
       opacity: .92;
       font-style: italic;
-    }
-
-    /* Decorative branch */
-    .branch{
-      position: absolute;
-      left: 50%;
-      bottom: -18px;
-      transform: translateX(-50%);
-      width: min(980px, 120%);
-      height: auto;
-      pointer-events: none;
-      opacity: .95;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,.25));
     }
 
     .wrap{
@@ -85,19 +76,20 @@
     }
 
     .hero{
-      margin-top: -18px;
-      padding-top: 0;
+      padding-top: 18px;
     }
+
     .hero img{
       width: 100%;
       border-radius: var(--radius);
       display: block;
-      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      box-shadow: 0 12px 26px rgba(0,0,0,.18);
     }
+
     .caption{
       margin: 10px 2px 0;
       font-size: .95rem;
-      opacity: .85;
+      opacity: .86;
     }
 
     .video{
@@ -114,18 +106,21 @@
       gap: 16px;
       margin-top: 12px;
     }
+
     .char{
-      background: #fbf8f2;
+      background: linear-gradient(180deg, #fbf8f2 0%, #f6efe4 100%);
       border: 1px solid rgba(0,0,0,.05);
       border-radius: 14px;
       padding: 14px;
       text-align: center;
       transition: transform .15s ease, box-shadow .15s ease;
     }
+
     .char:hover{
       transform: translateY(-2px);
-      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+      box-shadow: 0 12px 20px rgba(0,0,0,.12);
     }
+
     .char img{
       width: 120px;
       height: 120px;
@@ -136,11 +131,34 @@
       display: block;
       margin: 0 auto 10px;
     }
+
     .char .name{
       margin: 0;
       font-weight: 800;
       color: var(--brown-dark);
       letter-spacing: .2px;
+    }
+
+    .char .mini{
+      margin: 6px 0 0;
+      font-size: .92rem;
+      opacity: .82;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+
+    .chip{
+      background: #f4ecdf;
+      border: 1px solid rgba(0,0,0,.06);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .92rem;
+      color: #3c2d1c;
     }
 
     footer{
@@ -149,6 +167,13 @@
       font-size: .92rem;
       opacity: .8;
     }
+
+    .note{
+      background: #fbf5ea;
+      border-left: 5px solid var(--brown2);
+      padding: 12px 14px;
+      border-radius: 12px;
+    }
   </style>
 </head>
 
@@ -156,14 +181,19 @@
   <header>
     <h1>Ni no Kuni: Wrath of the White Witch</h1>
     <p>Art, Technology, and Interactivity in a Fantasy Game World</p>
-    <img class="branch" src="images/branch.png" alt="Decorative tree branch" />
   </header>
 
   <main class="wrap">
+    <!-- Title → Game Image → Video -->
     <section class="card hero">
       <h2>Game Art</h2>
-      <img src="images/game_art.png" alt="Ni no Kuni: Wrath of the White Witch artwork" />
-      <p class="caption">This artwork sets the tone: wonder + softness, but with a story that carries grief and responsibility.</p>
+      <img src="images/game_art.png" alt="Ni no Kuni: Wrath of the White Witch key art" />
+      <p class="caption">A storybook fantasy look (soft light, lush forests, hand-drawn character style) that sets up the game’s emotional tone.</p>
+      <div class="chips">
+        <span class="chip">Studio Ghibli-inspired</span>
+        <span class="chip">RPG / adventure</span>
+        <span class="chip">Fantasy + grief narrative</span>
+      </div>
     </section>
 
     <section class="card">
@@ -174,9 +204,13 @@
         allowfullscreen></iframe>
     </section>
 
+    <!-- Everything else underneath -->
     <section class="card">
       <h2>About the Game</h2>
-      <p><em>Ni no Kuni: Wrath of the White Witch</em> is a role-playing game created by Level-5 with animation support from Studio Ghibli. You play as Oliver, a kid who travels into a parallel fantasy world to try to fix what he lost in his own world. The game mixes storybook visuals, emotional storytelling, and classic RPG systems (exploration + battles).</p>
+      <p><em>Ni no Kuni: Wrath of the White Witch</em> is a role‑playing game made by Level‑5 with animation support from Studio Ghibli. You play as Oliver, a kid who enters a parallel world after a major loss in his own life. The game mixes exploration, quests, creature companions (“familiars”), and real-time combat, and it uses a warm, illustrated style to carry heavier emotions.</p>
+      <div class="note">
+        <strong>Why I chose it:</strong> it’s a perfect example of how art style, technology, and interaction work together to create meaning—not just story.
+      </div>
     </section>
 
     <section class="card">
@@ -185,10 +219,49 @@
         <div class="char">
           <img src="images/oliver.png" alt="Oliver" />
           <p class="name">Oliver</p>
+          <p class="mini">The player character—curious, brave, and emotionally grounded.</p>
         </div>
         <div class="char">
           <img src="images/drippy.png" alt="Drippy" />
           <p class="name">Drippy</p>
+          <p class="mini">A guide/sidekick who keeps the world feeling playful and magical.</p>
         </div>
         <div class="char">
-          <i
+          <img src="images/esther.png" alt="Esther" />
+          <p class="name">Esther</p>
+          <p class="mini">A companion whose design and role reinforce the fairytale adventure tone.</p>
+        </div>
+        <div class="char">
+          <img src="images/swaine.png" alt="Swaine" />
+          <p class="name">Swaine</p>
+          <p class="mini">A more “street-smart” ally who adds contrast to the storybook innocence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Artistic Dimension</h2>
+      <p>The game’s visual language uses soft color palettes, rounded shapes, and hand-drawn character design to signal wonder and safety. Semiotics-wise, those signs tell you “this is a gentle fantasy,” even when the narrative explores loss and fear. That contrast is part of the emotional power: the art makes difficult themes feel approachable without making them disappear.</p>
+    </section>
+
+    <section class="card">
+      <h2>Technical Dimension</h2>
+      <p>Technically, <em>Ni no Kuni</em> blends animated cutscenes with 3D environments and live combat. The smooth transition between “watching” and “playing” makes the world feel continuous, so you stay immersed in the same mood and style. The systems (menus, combat UI, companions) also create a consistent “storybook interface,” like you’re navigating a magical illustrated book.</p>
+    </section>
+
+    <section class="card">
+      <h2>Interactive Dimension</h2>
+      <p>The game’s meaning is produced through participation: exploration, battles, and repeated learning. You don’t just observe Oliver’s journey—you practice it. Interactivity turns emotions into actions (risk, recovery, patience), and repetition (trying again, learning a boss, building a team) becomes part of how the player understands the world.</p>
+    </section>
+
+    <section class="card">
+      <h2>Critical Theory Connection (short + usable)</h2>
+      <p>From a critical theory / semiotics angle, the game shows how visuals and systems create meaning: the “Ghibli look” functions as a sign system that shapes what we expect to feel. From an interactivity perspective, the player’s choices and repeated actions produce attachment and emotional investment. The result is a game world that feels coherent because art + tech + interaction reinforce each other.</p>
+    </section>
+
+    <footer>
+      <p>Ni no Kuni analysis website — class project (art + tech + interactivity)</p>
+    </footer>
+  </main>
+</body>
+</html>
