@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ni no Kuni: Wrath of the White Witch — Sound + Image + Affect</title>
+  <title>Ni no Kuni: Wrath of the White Witch — Final Web Paper</title>
 
   <style>
     :root{
+      /* Earthy + greens palette */
       --bg: #f7f3ec;
       --bg2:#efe6d6;
       --paper: #ffffff;
+
       --ink: #2a221a;
+      --muted: #5b5248;
+
       --brown: #6b4f2d;
       --brown2:#8a6a43;
       --brown-dark: #4a3621;
+
+      --green: #2f6f5f;
+      --green2:#3f7f63;
+      --green-dark:#1f4f41;
+
       --line: #e6dccb;
       --shadow: 0 10px 22px rgba(0,0,0,.10);
       --radius: 16px;
@@ -27,13 +36,14 @@
       line-height: 1.7;
       color: var(--ink);
       background:
-        radial-gradient(900px 500px at 20% -10%, rgba(138,106,67,.20), transparent 60%),
-        radial-gradient(800px 450px at 90% 10%, rgba(107,79,45,.16), transparent 55%),
+        radial-gradient(900px 520px at 18% -10%, rgba(63,127,99,.22), transparent 60%),
+        radial-gradient(800px 480px at 92% 12%, rgba(138,106,67,.18), transparent 55%),
+        radial-gradient(700px 420px at 65% 80%, rgba(47,111,95,.12), transparent 60%),
         linear-gradient(180deg, #fbf8f2 0%, var(--bg) 40%, var(--bg2) 100%);
     }
 
     header{
-      background: linear-gradient(180deg, #7a5a35 0%, var(--brown) 70%, #5b4024 100%);
+      background: linear-gradient(180deg, #2a6a54 0%, var(--green) 45%, var(--brown) 100%);
       color: #fffaf0;
       text-align: center;
       padding: 34px 16px 28px;
@@ -49,7 +59,7 @@
 
     header p{
       margin: 0;
-      opacity: .92;
+      opacity: .94;
       font-style: italic;
     }
 
@@ -78,9 +88,12 @@
 
     h3{
       margin: 16px 0 8px;
-      color: var(--brown-dark);
-      font-size: 1.05rem;
+      color: var(--green-dark);
+      font-size: 1.06rem;
     }
+
+    p{ margin: 0 0 12px; }
+    p:last-child{ margin-bottom: 0; }
 
     .hero{
       padding-top: 18px;
@@ -91,6 +104,14 @@
       border-radius: var(--radius);
       display: block;
       box-shadow: 0 12px 26px rgba(0,0,0,.18);
+      border: 1px solid rgba(0,0,0,.06);
+      background: #fff;
+    }
+
+    .meta{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .95rem;
     }
 
     figure{
@@ -103,12 +124,14 @@
       display: block;
       border: 1px solid rgba(0,0,0,.06);
       box-shadow: 0 10px 18px rgba(0,0,0,.12);
+      background:#fff;
     }
 
     figcaption{
       margin: 10px 2px 0;
       font-size: .95rem;
       opacity: .86;
+      color: var(--muted);
     }
 
     .video{
@@ -119,6 +142,60 @@
       box-shadow: 0 10px 18px rgba(0,0,0,.12);
     }
 
+    .toc{
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .toc a{
+      text-decoration: none;
+      color: #1f2a24;
+      background: rgba(47,111,95,.12);
+      border: 1px solid rgba(31,79,65,.18);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .92rem;
+    }
+
+    .toc a:hover{
+      background: rgba(47,111,95,.18);
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+
+    .chip{
+      background: #f0f6f2;
+      border: 1px solid rgba(47,111,95,.18);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .92rem;
+      color: #203129;
+    }
+
+    .note{
+      background: #f4fbf6;
+      border-left: 5px solid var(--green2);
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 12px;
+      color: #22342c;
+    }
+
+    .spoiler{
+      background: #fff2e0;
+      border: 1px solid rgba(0,0,0,.07);
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
     .grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -127,7 +204,7 @@
     }
 
     .char{
-      background: linear-gradient(180deg, #fbf8f2 0%, #f6efe4 100%);
+      background: linear-gradient(180deg, #fbf8f2 0%, #f3f7f3 100%);
       border: 1px solid rgba(0,0,0,.05);
       border-radius: 14px;
       padding: 14px;
@@ -145,7 +222,7 @@
       height: 120px;
       object-fit: cover;
       border-radius: 999px;
-      border: 3px solid #eadfcd;
+      border: 3px solid rgba(47,111,95,.20);
       background: white;
       display: block;
       margin: 0 auto 10px;
@@ -161,94 +238,65 @@
     .char .mini{
       margin: 6px 0 0;
       font-size: .92rem;
-      opacity: .82;
-    }
-
-    .note{
-      background: #fbf5ea;
-      border-left: 5px solid var(--brown2);
-      padding: 12px 14px;
-      border-radius: 12px;
-      margin-top: 12px;
-    }
-
-    .toc{
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .toc a{
-      text-decoration: none;
-      color: #3c2d1c;
-      background: #f4ecdf;
-      border: 1px solid rgba(0,0,0,.06);
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: .92rem;
-    }
-
-    .toc a:hover{
-      background: #efe2cf;
-    }
-
-    .spoiler{
-      background: #fff2e0;
-      border: 1px solid rgba(0,0,0,.07);
-      border-radius: 14px;
-      padding: 14px;
-      margin-top: 12px;
-    }
-
-    .small{
-      font-size: .95rem;
-      opacity: .9;
+      opacity: .88;
+      color: var(--muted);
     }
 
     .notes{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       font-size: .95rem;
+      color: var(--ink);
+    }
+
+    .small{
+      font-size: .95rem;
+      color: var(--muted);
     }
 
     footer{
       text-align: center;
       padding: 10px 0 30px;
       font-size: .92rem;
-      opacity: .8;
+      opacity: .85;
+      color: var(--muted);
     }
+
+    a{ color: var(--green-dark); }
+    a:hover{ color: var(--green); }
+    code{ background: #f6f2ea; padding: 2px 6px; border-radius: 8px; }
   </style>
 </head>
 
 <body>
   <header>
     <h1>Ni no Kuni: Wrath of the White Witch</h1>
-    <p>Sound + Image + Interactivity as a “Web Paper” (Final Project)</p>
+    <p>A final “web paper” on story, gameplay, and the emotional design of a fantasy world</p>
   </header>
 
   <main class="wrap">
 
     <!-- HERO / KEY ART -->
     <section class="card hero" id="top">
-      <!-- FIXED PATH: use images: not images/ -->
-      <img src="images:game_art.png" alt="Ni no Kuni: Wrath of the White Witch key art" />
-      <p class="small" style="margin:12px 0 0;">
-        <strong>Author:</strong> [YOUR NAME] • <strong>Course:</strong> [COURSE NAME] • <strong>Date:</strong> January 7, 2026
-      </p>
+      <img src="images/game_art.png" alt="Ni no Kuni: Wrath of the White Witch key art" />
+      <p class="meta"><strong>Author:</strong> [YOUR NAME] • <strong>Course:</strong> [COURSE NAME] • <strong>Date:</strong> January 7, 2026</p>
 
       <div class="toc" aria-label="Table of contents">
         <a href="#about">About</a>
         <a href="#gameplay">Gameplay + Stakes</a>
         <a href="#arc">Narrative Arc</a>
-        <a href="#analysis">Main Analysis (Sound + Image)</a>
         <a href="#ending">How it Ends</a>
+        <a href="#analysis">Reading Connection</a>
+        <a href="#characters">Main Characters</a>
         <a href="#conclusion">Conclusion</a>
         <a href="#biblio">Bibliographic Notes</a>
       </div>
 
-      <div class="note">
-        <strong>Focus of this web paper:</strong> one aspect of the game — how <strong>sound + image</strong> create an emotional “container”
-        that makes the story’s heavy themes (loss, fear, responsibility) feel playable and meaningful (note 1; note 2).
+      <div class="chips" aria-label="Keywords">
+        <span class="chip">fantasy RPG</span>
+        <span class="chip">grief + hope</span>
+        <span class="chip">storybook visuals</span>
+        <span class="chip">music as mood</span>
+        <span class="chip">interactivity</span>
       </div>
     </section>
 
@@ -259,40 +307,258 @@
         src="https://www.youtube.com/embed/zxjz6_6R0qA"
         title="Ni no Kuni Trailer"
         allowfullscreen></iframe>
+      <p class="small" style="margin-top:10px;">
+        The trailer is useful because it immediately establishes the tone: a gentle, storybook world paired with high emotional stakes.
+      </p>
     </section>
 
     <!-- ABOUT -->
     <section class="card" id="about">
       <h2>About the Game</h2>
       <p>
-        <em>Ni no Kuni: Wrath of the White Witch</em> is a role-playing game by Level-5 with animation collaboration tied to Studio Ghibli’s style (note 3).
-        You play as Oliver, a kid who crosses into a parallel world after a major loss in his own life. The game blends exploration, side quests,
-        creature companions (“familiars”), and real-time combat. What stands out to me is that the warm, illustrated look doesn’t erase sadness —
-        it makes space for it, so the player can keep moving forward.
+        <em>Ni no Kuni: Wrath of the White Witch</em> is a role-playing game by Level-5 that is widely known for its animation style and
+        “storybook” feeling. It follows Oliver, a child dealing with a sudden personal loss, who discovers a pathway into a parallel world.
+        From the beginning, the game links fantasy adventure to something very real: grief, fear, and the desire to undo what cannot be undone.
+      </p>
+      <p>
+        What makes the game stand out is that it refuses to become only dark or only cute. It holds both at the same time.
+        The world is visually warm and inviting, but the plot keeps reminding you that the characters are struggling with brokenheartedness,
+        manipulation, and the consequences of power. This tension is part of why the game is so memorable: it’s comforting without being shallow.
       </p>
 
-      <!-- OPTIONAL screenshot slot -->
-      <figure>
-        <img src="images/screenshot_world.png" alt="Screenshot of the overworld or a town in Ni no Kuni" />
-        <figcaption>
-          Screenshot: A town/overworld moment where the storybook look makes the world feel safe even when the story is serious.
-          (Replace this file with your own screenshot and update the image note in Bibliographic Notes.)
-        </figcaption>
-      </figure>
+      <div class="note">
+        <strong>Note:</strong> If you add your own screenshots, put them in the <code>images/</code> folder and cite them in the Bibliographic Notes section.
+      </div>
     </section>
 
-    <!-- GAMEPLAY + STAKES -->
+    <!-- GAMEPLAY + STAKES (REQUIRED) -->
     <section class="card" id="gameplay">
       <h2>Gameplay and What’s at Stake</h2>
 
-      <h3>What you do (gameplay loop)</h3>
+      <h3>Gameplay: what you do minute-to-minute</h3>
       <p>
-        The core loop is: explore → talk to people and accept quests → fight enemies → level up → unlock new areas and abilities.
-        Battles happen in real time, but they still have RPG decision-making (switching actions, timing, using items, managing health/magic).
-        Familiars make combat feel like teamwork: you’re not only controlling Oliver — you’re building a small ecosystem of helpers.
+        The gameplay centers on exploration, quests, and battles. You move through towns, forests, fields, and dungeons, talking to NPCs to
+        learn what they need, then traveling to solve problems through fighting, item collection, puzzle-like tasks, and story progression.
+        The game has the rhythm of a classic RPG: the world opens up over time, and the player’s skills expand as you learn spells and build a team.
+      </p>
+      <p>
+        Combat happens in real time, but it still asks for strategy. You manage actions, abilities, and healing while paying attention to the enemy’s behavior.
+        A major system is the use of familiars, which turns battles into more than “just Oliver.” The player builds combinations of companions
+        and learns what works together. That sense of learning and adjusting is important because it mirrors the story’s theme:
+        you don’t move forward by magic alone—you move forward by practice.
       </p>
 
-      <h3>What’s at stake (why it matters)</h3>
+      <h3>Stakes: what the player is trying to prevent</h3>
       <p>
-        The stakes start personal: Oliver is grieving his mother and wants to “fix” what feels impossible to fix.
-        But the game scales that grief into something world-wide: there’s a force that damages
+        The stakes begin with Oliver’s personal grief. His motivation is emotional before it’s heroic: he wants to make sense of loss and believes there might be a way
+        to “fix” it. When the parallel world opens, the stakes expand into a collective problem: an evil force is damaging the hearts of people across the world,
+        leaving them “brokenhearted.” The story turns this into a wider moral project, not just a personal wish.
+      </p>
+      <p>
+        What’s powerful about the stakes is that they are both symbolic and mechanical. Helping people isn’t just a cutscene—it’s connected to your progression.
+        The game repeatedly asks the player to notice what’s missing in others and to take action to restore it. Because you’re doing it again and again,
+        the theme becomes experiential: the game teaches care and persistence through the structure of play.
+      </p>
+    </section>
+
+    <!-- NARRATIVE ARC (REQUIRED) -->
+    <section class="card" id="arc">
+      <h2>Narrative Arc (Beginning → Middle → Build-up)</h2>
+
+      <h3>Beginning: a loss that changes everything</h3>
+      <p>
+        Oliver begins in Motorville, living an ordinary life until a tragic event results in the death of his mother. The opening is not just “backstory”;
+        it’s the emotional core of the whole game. This isn’t a hero who starts with a destiny—he starts with a wound.
+        The fantasy world becomes a place where he can act, learn, and attempt repair, even if repair is complicated.
+      </p>
+      <p>
+        Soon, Oliver is pulled into the parallel world with the help of Drippy, who functions like a guide but also like emotional balance.
+        Drippy’s humor and warmth keep the tone from collapsing into despair. This matters because the player is asked to keep going—moving forward is the only option,
+        and the game’s tone supports that movement.
+      </p>
+
+      <h3>Middle: learning magic, building relationships, restoring hearts</h3>
+      <p>
+        The middle of the story is a journey of learning and gathering. Oliver studies spells, meets allies, and visits new regions where the consequences of the villain’s
+        influence appear in different forms. The narrative repeats a pattern: you arrive somewhere beautiful, discover a problem underneath it, and then help restore what has been harmed.
+        This structure makes the world feel emotionally alive—places don’t just look different; they feel different because of the people in them.
+      </p>
+      <p>
+        Oliver’s companions are important to the arc because they broaden the story from “one boy’s grief” to a shared mission. Their presence makes the story feel like a collective
+        responsibility rather than a solo fantasy. Over time, the plot escalates from individual brokenheartedness to larger systems of control, fear, and corruption.
+      </p>
+
+      <h3>Build-up: confronting power and what it does to a world</h3>
+      <p>
+        As the game advances, the story becomes less about one “bad guy” and more about what despair can do when it becomes structural.
+        The villain’s power is connected to emotional damage—people are not only threatened physically, they are drained, dulled, or manipulated.
+        This is where the game becomes especially meaningful: it frames emotional harm as a world-shaping force, not a private issue.
+      </p>
+    </section>
+
+    <!-- ENDING (REQUIRED) -->
+    <section class="card" id="ending">
+      <h2>How the Game Ends (Spoilers)</h2>
+
+      <div class="spoiler">
+        <p style="margin:0 0 10px;"><strong>Spoiler warning:</strong> The paragraphs below describe the ending.</p>
+
+        <p>
+          The end of <em>Ni no Kuni</em> resolves both the external conflict (defeating the main villain forces) and the emotional conflict (what Oliver learns about grief,
+          responsibility, and restoration). The final stretch of the game escalates the threat beyond a simple duel: entire communities are endangered, and the world’s stability
+          is shown as fragile when emotional harm spreads.
+        </p>
+
+        <p>
+          The ending also reframes villainy. Instead of presenting evil as random, the game links it to history, despair, and the desire to control a world through fear.
+          There is a strong sense that “brokenheartedness” is not only a status effect—it’s a metaphor for what happens when people lose connection to care, empathy, or hope.
+          The game’s final conflict becomes a decision between destruction and restoration.
+        </p>
+
+        <p>
+          After the climax and resolution, Oliver returns to his own world changed. The game does not pretend that loss never happened.
+          What changes is Oliver’s capacity: he has practiced courage and care through action, and he brings that back with him.
+          In that way, the ending isn’t only “winning”—it’s the idea that you can’t rewrite everything, but you can still rebuild yourself and your relationships.
+        </p>
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        If your professor wants the ending to name the final villain(s) and the final twist explicitly, tell me and I’ll rewrite this section with proper names while keeping it readable.
+      </p>
+    </section>
+
+    <!-- READING CONNECTION (REQUIRED) -->
+    <section class="card" id="analysis">
+      <h2>Course Reading Connection: Why the Game Feels the Way It Feels</h2>
+
+      <h3>Massumi: affect as intensity before emotion</h3>
+      <p>
+        Brian Massumi’s distinction between affect and emotion helps explain why <em>Ni no Kuni</em> feels powerful even in moments that are mechanically simple
+        (walking, menu management, traveling between locations). Affect can be understood as intensity that hits you before you translate it into a named emotion.
+        In this game, the orchestral score, the gentle pacing, and the soft visual design create a steady emotional pressure—like the world is always reminding you that it matters.
+      </p>
+      <p>
+        This matters because the game’s themes could easily become either melodramatic or distant. Instead, the atmosphere keeps you inside the experience.
+        Even when you aren’t in a cutscene, the game’s audiovisual design maintains a mood of tenderness + danger.
+        That’s why the stakes feel continuous: the world never fully “turns off” emotionally, so you keep caring while you play.
+      </p>
+
+      <h3>Anzieu: an “envelope” that holds the player</h3>
+      <p>
+        Didier Anzieu’s ideas about the skin ego are useful here because they describe how our sense of self can feel supported by an enveloping structure.
+        In <em>Ni no Kuni</em>, the world’s design acts like a supportive boundary: the music and storybook visuals create a kind of containment that makes the heavy subject matter playable.
+        The player can approach grief indirectly through adventure, because the world itself feels stable enough to hold those emotions.
+      </p>
+      <p>
+        That containment is not the same as “happy” or “safe.” It’s more like a designed steadiness. The game lets you face fear without overwhelming you.
+        It makes room for sadness while still offering beauty. In other words, the world is not only a setting—it’s a structure that shapes the player’s ability to keep going.
+      </p>
+
+      <div class="note">
+        <strong>In my view:</strong> sound + image + interactivity work together. The story provides meaning, but the atmosphere makes the meaning stick.
+        The game teaches you how to feel through repetition and through the world’s constant mood.
+      </div>
+    </section>
+
+    <!-- CHARACTERS (you wanted these kept + images) -->
+    <section class="card" id="characters">
+      <h2>Main Characters</h2>
+      <p>
+        These characters shape the emotional tone of the game. They aren’t just “party members”—they each represent a different way of moving through fear, grief, and responsibility.
+        Their designs also reinforce the storybook style: soft shapes, warm color choices, and readable silhouettes that keep the world inviting even when the plot is intense.
+      </p>
+
+      <div class="grid">
+        <div class="char">
+          <img src="images/oliver.png" alt="Oliver" />
+          <p class="name">Oliver</p>
+          <p class="mini">
+            The protagonist. Oliver’s journey begins with grief, but his strength is his willingness to learn and keep helping people even when he’s scared.
+          </p>
+        </div>
+
+        <div class="char">
+          <img src="images/drippy.png" alt="Drippy" />
+          <p class="name">Drippy</p>
+          <p class="mini">
+            Oliver’s guide and comedic support. Drippy keeps the tone from becoming too heavy, balancing the story’s sadness with warmth and momentum.
+          </p>
+        </div>
+
+        <div class="char">
+          <img src="images/esther.png" alt="Esther" />
+          <p class="name">Esther</p>
+          <p class="mini">
+            A key companion who adds emotional softness and courage. Esther’s presence reinforces the fairytale feeling while still taking the stakes seriously.
+          </p>
+        </div>
+
+        <div class="char">
+          <img src="images/swaine.png" alt="Swaine" />
+          <p class="name">Swaine</p>
+          <p class="mini">
+            A street-smart ally. Swaine brings contrast to the storybook innocence—he feels more grounded, which helps the party feel more layered and real.
+          </p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Reminder:</strong> the image filenames must match exactly and live in an <code>images/</code> folder (example: <code>images/oliver.png</code>).
+      </div>
+    </section>
+
+    <!-- CONCLUSION (REQUIRED) -->
+    <section class="card" id="conclusion">
+      <h2>Conclusion: Why This Game Is Compelling to Me</h2>
+      <p>
+        What I find most compelling about <em>Ni no Kuni</em> is that it treats hope like a practice. The game doesn’t say “get over it” and move on.
+        Instead, it builds a world where helping others is part of healing—both emotionally and structurally.
+        The player repeatedly learns that restoration takes time, attention, and willingness to keep showing up.
+      </p>
+      <p>
+        The game’s sound and visuals are what make that practice feel meaningful rather than repetitive. The music and art direction create a stable atmosphere that supports the player,
+        so even when the story is intense, the experience still feels approachable. That balance is why the game feels educational in an emotional sense:
+        it teaches you how to carry sadness without being consumed by it.
+      </p>
+      <p>
+        In the end, <em>Ni no Kuni</em> isn’t only memorable because it is beautiful. It’s memorable because its beauty has a purpose.
+        It creates space for grief and fear, then uses interactivity to show that care and courage are things you build through action.
+        That’s why the conclusion lands: the player doesn’t just watch change happen— they participate in it.
+      </p>
+    </section>
+
+    <!-- BIBLIOGRAPHIC NOTES (REQUIRED) -->
+    <section class="card" id="biblio">
+      <h2>Bibliographic Notes (Improvised Documentation)</h2>
+      <p class="small">
+        Style is intentionally “web paper” format. Replace sources if your class used different editions or PDFs.
+        Add image notes for any screenshots or key art you include.
+      </p>
+
+      <div class="notes">
+        <p><strong>(note 1)</strong> Brian Massumi. “The Autonomy of Affect.” <em>Cultural Critique</em>, no. 31 (1995), pp. 83–109. Accessed January 7, 2026. (Course reading)</p>
+        <p><strong>(note 2)</strong> Didier Anzieu. <em>The Skin Ego</em>. Translated by Chris Turner. Yale University Press, 1989. Accessed via course materials. (Course reading)</p>
+
+        <p><strong>(note 3)</strong> Level-5. <em>Ni no Kuni: Wrath of the White Witch</em>. Game (original release). Developer/publisher reference. Accessed January 7, 2026.</p>
+
+        <p><strong>(image note A)</strong> <em>images/game_art.png</em> (key art). Source: [WHERE YOU GOT IT]. Accessed January 7, 2026.</p>
+        <p><strong>(image note B)</strong> <em>images/oliver.png</em>. Source: [WHERE YOU GOT IT]. Accessed January 7, 2026.</p>
+        <p><strong>(image note C)</strong> <em>images/drippy.png</em>. Source: [WHERE YOU GOT IT]. Accessed January 7, 2026.</p>
+        <p><strong>(image note D)</strong> <em>images/esther.png</em>. Source: [WHERE YOU GOT IT]. Accessed January 7, 2026.</p>
+        <p><strong>(image note E)</strong> <em>images/swaine.png</em>. Source: [WHERE YOU GOT IT]. Accessed January 7, 2026.</p>
+      </div>
+
+      <div class="note">
+        <strong>Easy grading clarity tip:</strong> If your professor likes footnote-style markers in the text,
+        you can add “(note 1)” and “(note 2)” at the end of the specific paragraphs where you mention Massumi/Anzieu.
+      </div>
+    </section>
+
+    <footer>
+      <p>Ni no Kuni analysis website — final class project</p>
+      <p class="small"><a href="#top" style="color:inherit; text-decoration:none;">Back to top ↑</a></p>
+    </footer>
+
+  </main>
+</body>
+</html>
